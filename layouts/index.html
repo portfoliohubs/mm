@@ -73,9 +73,6 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* CSS Variables */
@@ -83,50 +80,25 @@
             --primary-color: #2563eb;
             --secondary-color: #7c3aed;
             --accent-color: #06b6d4;
-            --hot-pink: #ec4899;
-            --sun: #f59e0b;
-            --mint: #10b981;
-            --text-color: #0f172a;
-            --text-light: #475569;
+            --text-color: #1f2937;
+            --text-light: #6b7280;
             --bg-color: #ffffff;
-            --bg-secondary: #f8fafc;
-            --border-color: rgba(15, 23, 42, 0.10);
-            --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-            --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
-            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            --radius: 1.25rem;
-            --radius-sm: 0.9rem;
-            --surface: rgba(255, 255, 255, 0.72);
-            --surface-strong: rgba(255, 255, 255, 0.88);
-            --blur: blur(14px);
-            --ring: 0 0 0 4px rgba(37, 99, 235, 0.18);
-            --hero-grad: linear-gradient(135deg, rgba(37,99,235,0.95), rgba(124,58,237,0.92), rgba(236,72,153,0.88));
-            --aurora: radial-gradient(1200px 700px at 15% -10%, rgba(37, 99, 235, 0.18), transparent 55%),
-                      radial-gradient(900px 600px at 85% 5%, rgba(124, 58, 237, 0.18), transparent 55%),
-                      radial-gradient(900px 600px at 70% 95%, rgba(6, 182, 212, 0.14), transparent 55%),
-                      radial-gradient(900px 600px at 15% 85%, rgba(236, 72, 153, 0.12), transparent 55%);
-            --glow: 0 0 0 1px rgba(255,255,255,0.35) inset, 0 18px 80px rgba(37,99,235,0.18);
-            --grad-border: linear-gradient(135deg, rgba(37,99,235,0.55), rgba(124,58,237,0.45), rgba(236,72,153,0.35));
+            --bg-secondary: #f9fafb;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="dark"] {
             --primary-color: #3b82f6;
             --secondary-color: #8b5cf6;
             --accent-color: #22d3ee;
-            --hot-pink: #fb7185;
-            --sun: #fbbf24;
-            --mint: #34d399;
-            --text-color: #f8fafc;
-            --text-light: rgba(248, 250, 252, 0.78);
-            --bg-color: #0b1220;
-            --bg-secondary: rgba(15, 23, 42, 0.65);
-            --border-color: rgba(248, 250, 252, 0.12);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.55);
-            --surface: rgba(15, 23, 42, 0.55);
-            --surface-strong: rgba(15, 23, 42, 0.75);
-            --ring: 0 0 0 4px rgba(59, 130, 246, 0.25);
-            --glow: 0 0 0 1px rgba(255,255,255,0.10) inset, 0 18px 90px rgba(59,130,246,0.18);
+            --text-color: #f9fafb;
+            --text-light: #d1d5db;
+            --bg-color: #111827;
+            --bg-secondary: #1f2937;
+            --border-color: #374151;
         }
 
         /* Reset & Base */
@@ -141,41 +113,11 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: var(--aurora), var(--bg-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
             transition: var(--transition);
-        }
-
-        h1, h2, h3 {
-            font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-        }
-
-        a, button {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)),
-                              url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="120" height="120" filter="url(%23n)" opacity="0.12"/></svg>');
-            opacity: 0.35;
-            mix-blend-mode: overlay;
-        }
-
-        @keyframes floaty {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         body[dir="rtl"] {
@@ -188,23 +130,10 @@
             top: 0;
             left: 0;
             right: 0;
-            background: var(--surface);
+            background: var(--bg-color);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
             box-shadow: var(--shadow);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-        }
-
-        .header::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: -1px;
-            height: 2px;
-            background: var(--grad-border);
-            opacity: 0.65;
         }
 
         .header-content {
@@ -243,20 +172,13 @@
             color: var(--primary-color);
         }
 
-        .header-name {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--hot-pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
         .header-controls {
             display: flex;
             gap: 1rem;
         }
 
         .lang-toggle, .theme-toggle {
-            background: var(--surface-strong);
+            background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
@@ -266,18 +188,12 @@
             align-items: center;
             gap: 0.5rem;
             transition: var(--transition);
-            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
         }
 
         .lang-toggle:hover, .theme-toggle:hover {
             background: var(--primary-color);
             color: white;
             transform: translateY(-2px);
-        }
-
-        .lang-toggle:focus-visible, .theme-toggle:focus-visible, .menu-btn:focus-visible {
-            outline: none;
-            box-shadow: var(--ring);
         }
 
         /* Mobile Navigation */
@@ -287,13 +203,11 @@
             left: -100%;
             width: 280px;
             height: 100vh;
-            background: var(--surface-strong);
+            background: var(--bg-color);
             box-shadow: var(--shadow-lg);
             transition: var(--transition);
             z-index: 1001;
             overflow-y: auto;
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
         }
 
         .mobile-nav.active {
@@ -362,16 +276,6 @@
             margin: 0 auto;
         }
 
-        .section {
-            position: relative;
-        }
-
-        .section .section-header {
-            max-width: 820px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
         .section-header {
             text-align: center;
             margin-bottom: 3rem;
@@ -380,9 +284,7 @@
         .icon-circle {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, rgba(37,99,235,1), rgba(124,58,237,1), rgba(236,72,153,1));
-            background-size: 200% 200%;
-            animation: shimmer 8s ease infinite;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -390,7 +292,6 @@
             margin: 0 auto 1rem;
             color: white;
             font-size: 1.5rem;
-            box-shadow: 0 18px 60px rgba(37, 99, 235, 0.28);
         }
 
         .section-title {
@@ -401,105 +302,17 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            letter-spacing: -0.02em;
-        }
-
-        .section-title {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--hot-pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .section-subtitle {
             color: var(--text-light);
             font-size: 1.1rem;
-            max-width: 60ch;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         /* Hero Section */
         .hero-section {
             text-align: center;
-            padding: 5.5rem 2rem 4.25rem;
-        }
-
-        .hero-content {
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 2.25rem 2rem;
-            border: 1px solid var(--border-color);
-            border-radius: calc(var(--radius) + 0.25rem);
-            background: var(--surface);
-            box-shadow: var(--shadow-lg);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-        }
-
-        .hero-content {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content::before {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            background: var(--grad-border);
-            opacity: 0.9;
-            filter: blur(18px);
-        }
-
-        .hero-content::after {
-            content: '';
-            position: absolute;
-            inset: 1px;
-            border-radius: calc(var(--radius) + 0.25rem);
-            background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.62));
-        }
-
-        [data-theme="dark"] .hero-content::after {
-            background: linear-gradient(180deg, rgba(15,23,42,0.78), rgba(15,23,42,0.48));
-        }
-
-        .hero-content > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        @media (min-width: 992px) {
-            .hero-content {
-                display: grid;
-                grid-template-columns: 280px 1fr;
-                gap: 2.25rem;
-                align-items: center;
-                text-align: left;
-                padding: 2.75rem 2.75rem;
-            }
-
-            body[dir="rtl"] .hero-content {
-                text-align: right;
-            }
-
-            .profile-image-container {
-                margin-bottom: 0;
-                display: flex;
-                justify-content: center;
-            }
-
-            .hero-name,
-            .hero-tagline,
-            .hero-graduation {
-                margin-left: 0;
-                margin-right: 0;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-content {
-                padding: 1.75rem 1.25rem;
-            }
+            padding: 6rem 2rem;
         }
 
         .profile-image-container {
@@ -511,16 +324,8 @@
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid rgba(255, 255, 255, 0.65);
-            box-shadow: 0 22px 60px rgba(2, 6, 23, 0.18);
-        }
-
-        .profile-image-container {
-            animation: floaty 7s ease-in-out infinite;
-        }
-
-        [data-theme="dark"] .profile-image {
-            border: 6px solid rgba(15, 23, 42, 0.45);
+            border: 5px solid var(--primary-color);
+            box-shadow: var(--shadow-lg);
         }
 
         .hero-name {
@@ -531,14 +336,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-        }
-
-        .hero-name {
-            background: var(--hero-grad);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.03em;
         }
 
         .hero-tagline {
@@ -556,14 +353,9 @@
         .hero-position {
             font-size: 1.2rem;
             padding: 1rem 2rem;
-            background: var(--surface-strong);
-            border-radius: 999px;
-            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            border-radius: 1rem;
             display: inline-block;
-        }
-
-        .hero-position {
-            box-shadow: var(--shadow);
         }
 
         /* Skills Section */
@@ -574,35 +366,11 @@
         }
 
         .skill-category {
-            background: var(--surface);
+            background: var(--bg-secondary);
             padding: 2rem;
-            border-radius: var(--radius);
+            border-radius: 1rem;
             border: 1px solid var(--border-color);
             transition: var(--transition);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
-        }
-
-        .skill-category {
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .skill-category::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(600px 200px at 10% 0%, rgba(37,99,235,0.16), transparent 50%),
-                        radial-gradient(600px 200px at 100% 0%, rgba(236,72,153,0.12), transparent 50%),
-                        radial-gradient(600px 240px at 80% 110%, rgba(6,182,212,0.10), transparent 55%);
-            opacity: 0.9;
-            pointer-events: none;
-        }
-
-        .skill-category > * {
-            position: relative;
-            z-index: 1;
         }
 
         .skill-category:hover {
@@ -630,14 +398,9 @@
             align-items: center;
             gap: 1rem;
             padding: 0.75rem;
-            background: var(--surface-strong);
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+            border-radius: 0.5rem;
             transition: var(--transition);
-        }
-
-        .skill-item:hover {
-            box-shadow: 0 16px 40px rgba(37, 99, 235, 0.18);
         }
 
         .skill-item:hover {
@@ -680,8 +443,7 @@
             padding: 2rem;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-lg);
+            border-radius: 1rem;
         }
 
         .university-name {
@@ -699,12 +461,9 @@
             display: flex;
             gap: 1.5rem;
             padding: 2rem;
-            background: var(--surface);
-            border-radius: var(--radius);
+            background: var(--bg-secondary);
+            border-radius: 1rem;
             border: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
         }
 
         .degree-icon {
@@ -720,12 +479,8 @@
         /* Timeline */
         .timeline-container {
             padding: 2rem;
-            background: var(--surface);
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
+            background: var(--bg-secondary);
+            border-radius: 1rem;
         }
 
         .timeline-title {
@@ -780,12 +535,11 @@
         }
 
         .timeline-content {
-            background: var(--surface-strong);
+            background: var(--bg-color);
             padding: 1.5rem;
-            border-radius: var(--radius);
+            border-radius: 1rem;
             box-shadow: var(--shadow);
             max-width: 400px;
-            border: 1px solid var(--border-color);
         }
 
         .timeline-year {
@@ -852,12 +606,8 @@
 
         .case-category {
             padding: 2rem;
-            background: var(--surface);
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
+            background: var(--bg-secondary);
+            border-radius: 1rem;
         }
 
         .case-category-title {
@@ -875,14 +625,13 @@
         }
 
         .case-card {
-            background: var(--surface-strong);
-            border-radius: var(--radius);
+            background: var(--bg-color);
+            border-radius: 1rem;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
             width: 100%;
             max-width: 420px;
-            border: 1px solid var(--border-color);
         }
 
         .case-card:hover {
@@ -903,7 +652,7 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            background: rgba(2, 6, 23, 0.02);
+            background: var(--bg-secondary);
         }
 
         .case-description {
@@ -1002,15 +751,12 @@
             align-items: center;
             gap: 1.5rem;
             padding: 2rem;
-            background: var(--surface);
-            border-radius: var(--radius);
+            background: var(--bg-secondary);
+            border-radius: 1rem;
             border: 1px solid var(--border-color);
             text-decoration: none;
             color: var(--text-color);
             transition: var(--transition);
-            box-shadow: var(--shadow);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
         }
 
         .contact-method:hover {
@@ -1069,12 +815,8 @@
         .social-media {
             text-align: center;
             padding: 2rem;
-            background: var(--surface);
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
+            background: var(--bg-secondary);
+            border-radius: 1rem;
         }
 
         .social-title {
@@ -1120,12 +862,8 @@
         /* Location */
         .location-container {
             padding: 2rem;
-            background: var(--surface);
-            border-radius: var(--radius);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
+            background: var(--bg-secondary);
+            border-radius: 1rem;
         }
 
         .location-title {
@@ -1166,21 +904,9 @@
             justify-content: center;
         }
 
-        .btn-secondary {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--hot-pink));
-            background-size: 220% 220%;
-            animation: shimmer 10s ease infinite;
-            box-shadow: 0 18px 55px rgba(37, 99, 235, 0.25);
-        }
-
         .btn-secondary:hover {
-            filter: brightness(1.05);
+            background: var(--secondary-color);
             transform: translateY(-2px);
-        }
-
-        .btn:focus-visible {
-            outline: none;
-            box-shadow: var(--ring);
         }
 
         /* Footer */
@@ -1189,18 +915,15 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: var(--surface);
+            background: var(--bg-color);
             border-top: 1px solid var(--border-color);
             z-index: 999;
-            backdrop-filter: var(--blur);
-            -webkit-backdrop-filter: var(--blur);
         }
 
         .bottom-nav {
             display: flex;
             justify-content: space-around;
             padding: 0.5rem;
-            gap: 0.25rem;
         }
 
         .nav-item {
@@ -1214,23 +937,11 @@
             transition: var(--transition);
             border-radius: 0.5rem;
             font-size: 0.85rem;
-            background: transparent;
-            border: 1px solid transparent;
         }
 
         .nav-item:hover, .nav-item.active {
             color: var(--primary-color);
-            background: var(--surface-strong);
-            border-color: var(--border-color);
-        }
-
-        .nav-item.active {
-            box-shadow: var(--glow);
-        }
-
-        .nav-item:focus-visible {
-            outline: none;
-            box-shadow: var(--ring);
+            background: var(--bg-secondary);
         }
 
         .nav-item i {
@@ -1737,50 +1448,31 @@
     </footer>
 
     <script>
-        const rawCvData = {
-            lang: {{ .Site.Language.Lang | default "en" | jsonify }},
-            baseURL: {{ .Site.BaseURL | jsonify }},
-            title: {{ .Site.Title | jsonify }},
-            hero: {{ .Site.Params.hero | jsonify }},
-            heroAr: {{ .Site.Params.ar.hero | jsonify }},
-            skills: {{ .Site.Params.skills | jsonify }},
-            skillsAr: {{ .Site.Params.ar.skills | jsonify }},
-            education: {{ .Site.Params.education | jsonify }},
-            educationAr: {{ .Site.Params.ar.education | jsonify }},
-            contact: {{ .Site.Params.contact | jsonify }},
-            contactArLocation: {{ .Site.Params.ar.contact.location | jsonify }},
-            clinicalCases: {{ .Site.Params.clinical_cases | jsonify }},
-            labels: {{ .Site.Params.ui.labels | jsonify }},
-            labelsAr: {{ .Site.Params.ar.ui.labels | jsonify }}
-        };
+        const rawCvDataJson = `{{ dict
+            "lang" (.Site.Language.Lang | default "en")
+            "baseURL" .Site.BaseURL
+            "title" .Site.Title
+            "hero" .Site.Params.hero
+            "heroAr" .Site.Params.ar.hero
+            "skills" .Site.Params.skills
+            "skillsAr" .Site.Params.ar.skills
+            "education" .Site.Params.education
+            "educationAr" .Site.Params.ar.education
+            "contact" .Site.Params.contact
+            "contactArLocation" .Site.Params.ar.contact.location
+            "clinicalCases" .Site.Params.clinical_cases
+            "labels" .Site.Params.ui.labels
+            "labelsAr" .Site.Params.ar.ui.labels
+          | jsonify }}`;
 
-        function safeParse(val) {
-            if (typeof val === 'string') {
-                try {
-                    return JSON.parse(val);
-                } catch (_) {
-                    return val;
-                }
+        const cvData = (() => {
+            try {
+                return JSON.parse(rawCvDataJson);
+            } catch (e) {
+                console.error('Failed to parse rawCvDataJson', e);
+                return {};
             }
-            return val;
-        }
-
-        const cvData = {
-            lang: safeParse(rawCvData.lang),
-            baseURL: safeParse(rawCvData.baseURL),
-            title: safeParse(rawCvData.title),
-            hero: safeParse(rawCvData.hero),
-            heroAr: safeParse(rawCvData.heroAr),
-            skills: safeParse(rawCvData.skills),
-            skillsAr: safeParse(rawCvData.skillsAr),
-            education: safeParse(rawCvData.education),
-            educationAr: safeParse(rawCvData.educationAr),
-            contact: safeParse(rawCvData.contact),
-            contactArLocation: safeParse(rawCvData.contactArLocation),
-            clinicalCases: safeParse(rawCvData.clinicalCases),
-            labels: safeParse(rawCvData.labels),
-            labelsAr: safeParse(rawCvData.labelsAr)
-        };
+        })();
 
         const CV_LANG = 'en';
 
@@ -1972,144 +1664,137 @@
                     };
                 },
                 content: [
-                    // Header Section with Professional Design
+                    // Premium colorful header banner
                     {
+                        margin: [-50, -60, -50, 20],
                         stack: [
                             {
+                                canvas: [
+                                    { type: 'rect', x: 0, y: 0, w: 595.28, h: 165, color: '#0b1220' }
+                                ]
+                            },
+                            {
+                                canvas: [
+                                    { type: 'rect', x: 0, y: 0, w: 595.28, h: 165, color: '#2563eb', opacity: 0.55 },
+                                    { type: 'rect', x: 0, y: 0, w: 595.28, h: 165, color: '#7c3aed', opacity: 0.35 },
+                                    { type: 'rect', x: 0, y: 0, w: 595.28, h: 165, color: '#ec4899', opacity: 0.20 }
+                                ],
+                                absolutePosition: { x: 0, y: 0 }
+                            },
+                            {
                                 columns: [
-                                    profileImageDataUrl
-                                        ? { 
-                                            image: profileImageDataUrl, 
-                                            width: 80, 
-                                            height: 80,
-                                            alignment: 'center',
-                                            margin: [0, 0, 30, 0]
-                                        }
-                                        : { text: '', width: 0 },
-                                    {
+                                    profileImageDataUrl ? {
+                                        width: 96,
                                         stack: [
-                                            { text: name.toUpperCase(), style: 'headerName' },
-                                            { text: role, style: 'headerRole', margin: [0, 8, 0, 4] },
-                                            graduation ? { text: graduation, style: 'headerGraduation' } : null,
                                             {
                                                 canvas: [
-                                                    { type: 'line', x1: 0, y1: 0, x2: 200, y2: 0, lineWidth: 0.5, lineColor: '#2563eb' }
+                                                    { type: 'ellipse', x: 48, y: 48, r1: 48, r2: 48, color: '#ffffff', opacity: 0.18 }
                                                 ],
-                                                margin: [0, 12, 0, 12]
+                                                margin: [0, 0, 0, -96]
                                             },
-                                            ...contactLines
-                                        ].filter(Boolean),
-                                        width: '*'
+                                            {
+                                                image: profileImageDataUrl,
+                                                width: 84,
+                                                height: 84,
+                                                alignment: 'center',
+                                                margin: [6, 6, 0, 0]
+                                            }
+                                        ],
+                                        margin: [50, 32, 0, 0]
+                                    } : { text: '', width: 0 },
+                                    {
+                                        width: '*',
+                                        margin: [profileImageDataUrl ? 18 : 50, 34, 50, 0],
+                                        stack: [
+                                            { text: name, style: 'bannerName' },
+                                            role ? { text: role, style: 'bannerRole', margin: [0, 6, 0, 0] } : null,
+                                            graduation ? { text: graduation, style: 'bannerMeta', margin: [0, 6, 0, 0] } : null,
+                                            contactLines.length ? {
+                                                columns: [
+                                                    {
+                                                        width: '*',
+                                                        stack: contactLines.map(x => ({ text: x.text, style: 'bannerContact' }))
+                                                    }
+                                                ],
+                                                margin: [0, 10, 0, 0]
+                                            } : null
+                                        ].filter(Boolean)
                                     }
-                                ],
-                                columnGap: 0
+                                ]
                             }
-                        ],
-                        margin: [0, 0, 0, 30]
+                        ]
                     },
-                    
-                    // Professional divider
-                    {
-                        canvas: [
-                            { type: 'rect', x: 0, y: 0, w: 515, h: 2, color: '#2563eb' }
-                        ],
-                        margin: [0, 0, 0, 25]
-                    },
-                    
+
                     // Two-column layout for main content
                     {
                         columns: [
                             {
                                 width: '48%',
                                 stack: [
-                                    // Skills Section with Enhanced Design
                                     {
+                                        style: 'card',
                                         stack: [
-                                            { text: 'PROFESSIONAL SKILLS', style: 'sectionHeader' },
-                                            {
-                                                canvas: [
-                                                    { type: 'line', x1: 0, y1: 0, x2: 80, y2: 0, lineWidth: 1, lineColor: '#2563eb' }
-                                                ],
-                                                margin: [0, 0, 0, 15]
-                                            },
-                                            
-                                            // Clinical Skills
-                                            clinicalSkills.length > 0 ? {
-                                                stack: [
-                                                    { text: 'Clinical Skills', style: 'subsectionHeader' },
+                                            { text: 'SKILLS', style: 'cardTitle' },
+                                            { text: 'Clinical', style: 'cardSubtitle', margin: [0, 10, 0, 6] },
+                                            clinicalSkills.length ? {
+                                                columns: [
                                                     {
-                                                        ul: clinicalSkills.map(x => ({ text: x.text, style: 'skillItem' })),
-                                                        margin: [8, 8, 0, 20]
+                                                        width: '*',
+                                                        stack: clinicalSkills.map(s => ({ text: s.text, style: 'chip' }))
                                                     }
                                                 ]
-                                            } : null,
-                                            
-                                            // Digital Skills  
-                                            digitalSkills.length > 0 ? {
-                                                stack: [
-                                                    { text: 'Digital Skills', style: 'subsectionHeader' },
+                                            } : { text: '-', style: 'muted' },
+                                            { text: 'Digital', style: 'cardSubtitle', margin: [0, 12, 0, 6] },
+                                            digitalSkills.length ? {
+                                                columns: [
                                                     {
-                                                        ul: digitalSkills.map(x => ({ text: x.text, style: 'skillItem' })),
-                                                        margin: [8, 8, 0, 20]
+                                                        width: '*',
+                                                        stack: digitalSkills.map(s => ({ text: s.text, style: 'chipAlt' }))
                                                     }
                                                 ]
-                                            } : null,
-                                            
-                                            // Soft Skills
-                                            softSkills.length > 0 ? {
-                                                stack: [
-                                                    { text: 'Soft Skills', style: 'subsectionHeader' },
+                                            } : { text: '-', style: 'muted' },
+                                            { text: 'Soft', style: 'cardSubtitle', margin: [0, 12, 0, 6] },
+                                            softSkills.length ? {
+                                                columns: [
                                                     {
-                                                        ul: softSkills.map(x => ({ text: x.text, style: 'skillItem' })),
-                                                        margin: [8, 8, 0, 0]
+                                                        width: '*',
+                                                        stack: softSkills.map(s => ({ text: s.text, style: 'chipSoft' }))
                                                     }
                                                 ]
-                                            } : null
-                                        ].filter(Boolean)
+                                            } : { text: '-', style: 'muted' }
+                                        ]
                                     }
                                 ]
                             },
                             {
                                 width: '48%',
                                 stack: [
-                                    // Education Section
                                     {
+                                        style: 'card',
                                         stack: [
-                                            { text: 'EDUCATION', style: 'sectionHeader' },
-                                            {
-                                                canvas: [
-                                                    { type: 'line', x1: 0, y1: 0, x2: 80, y2: 0, lineWidth: 1, lineColor: '#2563eb' }
-                                                ],
-                                                margin: [0, 0, 0, 15]
-                                            },
-                                            
-                                            education.university ? {
-                                                stack: [
-                                                    { text: education.university, style: 'universityName' },
-                                                    education.graduation_year ? { 
-                                                        text: `Graduated: ${education.graduation_year}`, 
-                                                        style: 'graduationYear',
-                                                        margin: [0, 4, 0, 15]
-                                                    } : null
-                                                ].filter(Boolean)
-                                            } : null,
-                                            
-                                            // Timeline
-                                            timeline.length > 0 ? {
-                                                stack: [
-                                                    { text: 'Professional Timeline', style: 'subsectionHeader', margin: [0, 15, 0, 10] },
-                                                    ...timeline.map((item, index) => ({
-                                                        stack: [
-                                                            {
-                                                                canvas: [
-                                                                    { type: 'line', x1: 0, y1: 0, x2: 15, y2: 0, lineWidth: 2, lineColor: '#2563eb' }
-                                                                ],
-                                                                margin: [0, 8, 0, 4]
-                                                            },
-                                                            { text: item.text, style: 'timelineItem', margin: [20, 0, 0, 8] }
-                                                        ]
-                                                    }))
-                                                ]
+                                            { text: 'EDUCATION', style: 'cardTitle' },
+                                            education.university ? { text: education.university, style: 'eduSchool', margin: [0, 10, 0, 0] } : null,
+                                            education.graduation_year ? { text: `Graduated • ${education.graduation_year}`, style: 'eduMeta', margin: [0, 4, 0, 0] } : null,
+                                            timeline.length ? { text: 'Timeline', style: 'cardSubtitle', margin: [0, 14, 0, 8] } : null,
+                                            timeline.length ? {
+                                                stack: timeline.map(t => ({
+                                                    columns: [
+                                                        {
+                                                            width: 14,
+                                                            stack: [
+                                                                {
+                                                                    canvas: [
+                                                                        { type: 'ellipse', x: 7, y: 7, r1: 3.5, r2: 3.5, color: '#2563eb' }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            margin: [0, 3, 0, 0]
+                                                        },
+                                                        { width: '*', text: t.text, style: 'timelineText' }
+                                                    ],
+                                                    columnGap: 8,
+                                                    margin: [0, 0, 0, 7]
+                                                }))
                                             } : null
                                         ].filter(Boolean)
                                     }
@@ -2121,15 +1806,32 @@
                     
                     // Clinical Cases Section
                     casePages.length > 0 ? {
+                        pageBreak: 'before',
                         stack: [
-                            { text: 'CLINICAL CASES PORTFOLIO', style: 'sectionHeader', pageBreak: 'before', margin: [0, 0, 0, 20] },
                             {
-                                canvas: [
-                                    { type: 'line', x1: 0, y1: 0, x2: 120, y2: 0, lineWidth: 1, lineColor: '#2563eb' }
-                                ],
-                                margin: [0, 0, 0, 25]
+                                margin: [-50, -60, -50, 18],
+                                stack: [
+                                    {
+                                        canvas: [
+                                            { type: 'rect', x: 0, y: 0, w: 595.28, h: 80, color: '#0b1220' },
+                                            { type: 'rect', x: 0, y: 0, w: 595.28, h: 80, color: '#2563eb', opacity: 0.55 },
+                                            { type: 'rect', x: 0, y: 0, w: 595.28, h: 80, color: '#7c3aed', opacity: 0.30 }
+                                        ]
+                                    },
+                                    { text: 'CLINICAL CASES', style: 'casesHeader', margin: [50, 24, 50, 0], absolutePosition: { x: 0, y: 0 } }
+                                ]
                             },
-                            ...casePages
+                            ...casePages.map(p => ({
+                                stack: [
+                                    {
+                                        canvas: [
+                                            { type: 'rect', x: 0, y: 0, w: 495, h: 2, color: '#2563eb', opacity: 0.18 }
+                                        ],
+                                        margin: [0, 0, 0, 14]
+                                    },
+                                    p
+                                ]
+                            }))
                         ]
                     } : null,
                     
@@ -2159,79 +1861,98 @@
                     }] : [])
                 ].filter(Boolean),
                 styles: {
-                    // Professional Typography Styles
-                    headerName: { 
-                        fontSize: 26, 
-                        bold: true, 
-                        color: '#1a202c',
-                        letterSpacing: 1.2,
-                        lineHeight: 1.2
-                    },
-                    headerRole: { 
-                        fontSize: 14, 
-                        color: '#2563eb', 
+                    bannerName: {
+                        fontSize: 26,
                         bold: true,
-                        letterSpacing: 0.5
+                        color: '#ffffff',
+                        lineHeight: 1.05
                     },
-                    headerGraduation: { 
-                        fontSize: 11, 
-                        color: '#64748b',
-                        fontStyle: 'italic'
+                    bannerRole: {
+                        fontSize: 13,
+                        bold: true,
+                        color: '#e0e7ff'
                     },
-                    sectionHeader: { 
-                        fontSize: 14, 
-                        bold: true, 
-                        color: '#1a202c',
-                        letterSpacing: 1.5,
-                        marginBottom: 5
+                    bannerMeta: {
+                        fontSize: 10,
+                        color: '#e2e8f0'
                     },
-                    subsectionHeader: { 
-                        fontSize: 12, 
-                        bold: true, 
-                        color: '#2563eb',
-                        marginBottom: 3
+                    bannerContact: {
+                        fontSize: 9,
+                        color: '#ffffff'
                     },
-                    universityName: { 
-                        fontSize: 12, 
-                        bold: true, 
-                        color: '#1a202c',
-                        marginBottom: 2
+                    card: {
+                        fillColor: '#ffffff',
+                        margin: [0, 0, 0, 0]
                     },
-                    graduationYear: { 
-                        fontSize: 10, 
+                    cardTitle: {
+                        fontSize: 12,
+                        bold: true,
+                        color: '#0f172a',
+                        characterSpacing: 1
+                    },
+                    cardSubtitle: {
+                        fontSize: 10,
+                        bold: true,
+                        color: '#2563eb'
+                    },
+                    eduSchool: {
+                        fontSize: 11,
+                        bold: true,
+                        color: '#0f172a'
+                    },
+                    eduMeta: {
+                        fontSize: 9,
                         color: '#64748b'
                     },
-                    skillItem: { 
-                        fontSize: 10, 
-                        color: '#374151',
-                        marginBottom: 2
+                    timelineText: {
+                        fontSize: 9.5,
+                        color: '#334155',
+                        lineHeight: 1.25
                     },
-                    timelineItem: { 
-                        fontSize: 10, 
-                        color: '#374151',
-                        lineHeight: 1.3
+                    chip: {
+                        fontSize: 9,
+                        color: '#0f172a',
+                        margin: [0, 0, 0, 6]
                     },
-                    portfolioText: { 
-                        fontSize: 11, 
+                    chipAlt: {
+                        fontSize: 9,
+                        color: '#0f172a',
+                        margin: [0, 0, 0, 6]
+                    },
+                    chipSoft: {
+                        fontSize: 9,
+                        color: '#0f172a',
+                        margin: [0, 0, 0, 6]
+                    },
+                    muted: {
+                        fontSize: 9,
+                        color: '#94a3b8'
+                    },
+                    casesHeader: {
+                        fontSize: 18,
+                        bold: true,
+                        color: '#ffffff',
+                        characterSpacing: 1.3
+                    },
+                    portfolioText: {
+                        fontSize: 11,
                         color: '#4b5563'
                     },
-                    portfolioLink: { 
-                        fontSize: 12, 
+                    portfolioLink: {
+                        fontSize: 12,
                         bold: true
                     },
-                    small: { fontSize: 9 },
-                    smallMuted: { fontSize: 9, color: '#6b7280' },
-                    headerText: { 
-                        fontSize: 9, 
+                    headerText: {
+                        fontSize: 9,
                         color: '#6b7280',
                         fontStyle: 'italic'
                     },
-                    pageNumber: { 
-                        fontSize: 8, 
+                    pageNumber: {
+                        fontSize: 8,
                         color: '#9ca3af'
                     },
-                    footerText: { 
-                        fontSize: 8, 
+                    footerText: {
+                        fontSize: 8,
                         color: '#9ca3af'
                     }
                 }
@@ -2262,28 +1983,23 @@
             initNavigation();
             initFooter();
             // Download CV button
-            {{ if .Site.Params.ui.floating_cv_button }}
-            const downloadBtn = document.getElementById('downloadCvBtn');
-            if (downloadBtn) {
-                downloadBtn.addEventListener('click', async function() {
-                    const btn = this;
-                    const oldHtml = btn.innerHTML;
-                    btn.disabled = true;
-                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-                    try {
-                        console.log('Starting PDF generation...');
-                        await generateCvPdf();
-                        console.log('PDF generated successfully');
-                    } catch (error) {
-                        console.error('PDF generation failed:', error);
-                        alert('Failed to generate PDF. Please check console for details.');
-                    } finally {
-                        btn.disabled = false;
-                        btn.innerHTML = oldHtml;
-                    }
-                });
-            }
-            {{ end }}
+            document.getElementById('downloadCvBtn').addEventListener('click', async function() {
+                const btn = this;
+                const oldHtml = btn.innerHTML;
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+                try {
+                    console.log('Starting PDF generation...');
+                    await generateCvPdf();
+                    console.log('PDF generated successfully');
+                } catch (error) {
+                    console.error('PDF generation failed:', error);
+                    alert('Failed to generate PDF. Please check console for details.');
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = oldHtml;
+                }
+            });
         });
 
         // Theme Toggle
@@ -2377,12 +2093,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/vfs_fonts.min.js"></script>
 
-    {{ if .Site.Params.ui.floating_cv_button }}
     <!-- Floating Button -->
     <button type="button" class="floating-btn" id="downloadCvBtn" aria-label="Download CV PDF">
         <i class="fas fa-file-arrow-down"></i>
     </button>
-    {{ end }}
 
     </body>
 </html>
